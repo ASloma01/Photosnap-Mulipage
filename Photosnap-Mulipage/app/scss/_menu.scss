@@ -1,0 +1,50 @@
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.8rem 2.4rem;
+  @include media(">=tablet") {
+    padding: 2.8rem 4rem;
+  }
+  .menu__tablet {
+    a {
+      transition: 0.4 ease-in;
+      &:hover {
+        opacity: 30%;
+      }
+    }
+  }
+  .menu__ham {
+    @include media(">=tablet") {
+      display: none;
+    }
+    span {
+      display: block;
+      width: 2.2rem;
+      height: 0.1rem;
+      background-color: $black;
+      border-radius: 0.5rem;
+      &:nth-child(2) {
+        margin-top: 0.4rem;
+      }
+    }
+    span:nth-of-type(1) {
+      transform: rotate(45deg);
+    }
+    span:nth-of-type(2) {
+      transform: rotate(-45deg);
+    }
+  }
+}
+.menu__logo {
+  @include media(">=tablet") {
+    a {
+      display: flex;
+      img {
+        align-self: center;
+        object-fit: contain;
+        transform: translateY(0.1rem);
+      }
+    }
+  }
+}

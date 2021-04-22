@@ -1,0 +1,50 @@
+.features {
+  padding: 8rem 3.2rem;
+  display: flex;
+  flex-direction: column;
+  .feature {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__text {
+      text-align: center;
+
+      h3 {
+        padding-top: 4.8rem;
+        padding-bottom: 1.6rem;
+        font-size: $fs-s;
+        line-height: $lh-m;
+        font-weight: 700;
+      }
+
+      p {
+        font-size: $fs-b;
+        line-height: $lh-m;
+        font-weight: 400;
+        opacity: 60%;
+        @include media(">=tablet") {
+          padding-left: 15.5rem;
+          padding-right: 15.5rem;
+        }
+        @include media(">=desktop") {
+          padding-left: 3.5rem;
+          padding-right: 3.5rem;
+        }
+      }
+    }
+  }
+  @include media(">=desktop") {
+    flex-direction: row;
+  }
+  .feature:nth-of-type(2) {
+    margin: 5.6rem 0;
+    @include media(">=desktop") {
+      margin: 3.5rem 0 0 0;
+    }
+  }
+  @include media(">=desktop") {
+    padding: 12rem 3.2rem;
+  }
+}

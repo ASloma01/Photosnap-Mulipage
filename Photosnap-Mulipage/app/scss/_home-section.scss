@@ -1,0 +1,156 @@
+.intern-element {
+  display: flex;
+  flex-direction: column;
+  @include media(">=tablet") {
+    flex-direction: row;
+    min-height: 65rem;
+  }
+
+  //   &__bgc:nth-of-type(1) {
+  //     @include media(">=tablet") {
+  //       order: 1;
+  //     }
+  //   }
+  &__bgc {
+    min-height: 30rem;
+    background-image: url(/images/home/desktop/create-and-share.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    @include media(">=tablet") {
+      order: 1;
+      min-width: 27rem;
+      background-image: url(/images/home/tablet/create-and-share.jpg);
+    }
+    @include media(">=desktop") {
+      background-image: url(/images/home/desktop/create-and-share.jpg);
+      min-width: 830px;
+    }
+  }
+
+  .bg-beautiful {
+    background-image: url(/images/home/mobile/beautiful-stories.jpg);
+    @include media(">=tablet") {
+      order: 0;
+      background-image: url(/images/home/tablet/beautiful-stories.jpg);
+    }
+    @include media(">=desktop") {
+      background-image: url(/images/home/desktop/beautiful-stories.jpg);
+    }
+  }
+
+  .bg-design {
+    background-image: url(/images/home/mobile/designed-for-everyone.jpg);
+    @include media(">=tablet") {
+      background-image: url(/images/home/tablet/designed-for-everyone.jpg);
+    }
+    @include media(">=desktop") {
+      background-image: url(/images/home/desktop/designed-for-everyone.jpg);
+    }
+  }
+
+  .bg-white {
+    background-color: $white;
+    color: $black;
+
+    a {
+      color: $black;
+    }
+  }
+
+  .bg-white::after {
+    display: none;
+  }
+
+  &__invite {
+    min-height: 42rem;
+    background-color: $black;
+    color: $white;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 13rem;
+      height: 0.6rem;
+      position: absolute;
+      top: 0;
+      left: 3.3rem;
+      background-image: $gradient;
+      z-index: 1;
+      @include media(">=tablet") {
+        top: 32.2rem;
+        width: 34rem;
+        transform: translateX(-59%) rotateZ(90deg);
+      }
+    }
+
+    &__text {
+      padding: 7.2rem 3.3rem;
+      @include media(">=tablet") {
+        padding: 17.3rem 5.4rem;
+      }
+
+      h1 {
+        font-size: 3.2rem;
+        line-height: 4rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        @include media(">=tablet") {
+          font-size: $fs-l;
+          line-height: $lh-l;
+          letter-spacing: $ls-l;
+        }
+      }
+
+      p {
+        font-size: $fs-b;
+        opacity: 60%;
+        line-height: $lh-m;
+        padding: 1.6rem 0 2.3rem;
+        font-weight: 400;
+        @include media(">=tablet") {
+          padding: 2.1rem 0 4.8rem 0;
+        }
+      }
+
+      a {
+        position: relative;
+        color: $white;
+        font-size: $fs-xs;
+        line-height: 1.562rem;
+        letter-spacing: $ls-xs;
+        font-weight: 700;
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &:hover::after {
+          transform: translateX(100%);
+        }
+
+        &::after {
+          content: "";
+          display: block;
+          width: 4.2rem;
+          height: 100%;
+          position: absolute;
+          // transform: translateY(-50%);
+          top: 0rem;
+          left: 110%;
+          background-image: url(/images/shared/desktop/arrow.svg);
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center center;
+          transition: 0.2s ease-in all;
+          pointer-events: none;
+        }
+      }
+
+      .black-arr::after {
+        background-image: url(/images/shared/desktop/arrow-black.svg);
+      }
+    }
+  }
+}

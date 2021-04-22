@@ -1,0 +1,134 @@
+.stories {
+  @include media(">=tablet") {
+    display: flex;
+    flex-wrap: wrap;
+    @include media(">=desktop") {
+      flex-wrap: nowrap;
+    }
+  }
+  .story {
+    height: 37.5rem;
+    background-image: url(/images/stories/mobile/mountains.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    position: relative;
+    @include media(">=tablet") {
+      height: 50rem;
+      flex-basis: 50%;
+    }
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.0001) 0.27%,
+        rgba(0, 0, 0, 0.661222) 100%
+      );
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &__text {
+      width: 100%;
+      // height: 37.5rem;
+      padding: 0 3.2rem 4rem 3.2rem;
+      color: $white;
+      z-index: 1;
+
+      &__title {
+        h2 {
+          font-weight: 700;
+          font-size: $fs-s;
+          line-height: $lh-m;
+        }
+
+        p {
+          font-size: 1.3rem;
+          line-height: $lh-xs;
+          font-weight: 400;
+          // padding: 0.4rem 0 0.4rem 0;
+          padding-bottom: 1.7rem;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .wrapper-arrow {
+          display: flex;
+          align-items: flex-end;
+          justify-content: space-between;
+          a {
+            color: $white;
+            text-transform: uppercase;
+            line-height: $lh-xs;
+            letter-spacing: $ls-xs;
+            font-size: $fs-xs;
+            margin-top: 2rem;
+            display: inline-block;
+          }
+          .arrow {
+            display: block;
+            width: 4.2rem;
+            height: 1.6rem;
+
+            top: 0;
+            left: 235%;
+            background-image: url(/images/shared/desktop/arrow.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center center;
+          }
+        }
+      }
+    }
+    transition: 0.3s ease-in;
+    &:hover {
+      cursor: pointer;
+      transform: translateY(-3rem);
+    }
+    &:hover:before {
+      content: "";
+      width: 100%;
+      height: 0.6rem;
+      background: linear-gradient(
+        26.57deg,
+        #ffc593 0%,
+        #bc7198 43.29%,
+        #5a77ff 83.33%
+      );
+      // background-color: red;
+      transform: translateY(140px);
+    }
+  }
+
+  .story:nth-of-type(2) {
+    background-image: url(/images/stories/mobile/cityscapes.jpg);
+  }
+
+  .story:nth-of-type(3) {
+    background-image: url(/images/stories/mobile/18-days-voyage.jpg);
+  }
+
+  .story:nth-of-type(4) {
+    background-image: url(/images/stories/mobile/architecturals.jpg);
+  }
+}
+
+// display: block;
+// width: 4.2rem;
+// height: 100%;
+// position: absolute;
+// // transform: translateY(-50%);
+// top: 0;
+// left: 235%;
+// background-image: url(/images/shared/desktop/arrow.svg);
+// background-repeat: no-repeat;
+// background-size: contain;
+// background-position: center center;

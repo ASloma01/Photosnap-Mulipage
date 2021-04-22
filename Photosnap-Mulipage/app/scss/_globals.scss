@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0 auto;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+.btn {
+  background-color: $black;
+  padding: 1.2rem 2.4rem;
+  color: $white;
+  font-size: $fs-xs;
+  letter-spacing: $ls-xs;
+  line-height: $lh-xs;
+  text-transform: uppercase;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  transition: 0.4s ease-in all;
+  &:hover {
+    background-color: $light-grey;
+    color: $black;
+  }
+}
+
+.body-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.overflow {
+  position: absolute;
+  top: 80px;
+  display: none;
+  height: 250px;
+  width: 100%;
+  background-color: white;
+  animation: over-animation 0.3s ease-in-out;
+  transition: 0.3 ease-in-out all;
+  @keyframes over-animation {
+    0% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  &__menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 3;
+    li {
+      a {
+        display: inline-block;
+        color: $black;
+        text-transform: uppercase;
+        font-size: $fs-b;
+        font-weight: 700;
+        letter-spacing: 0.25rem;
+        line-height: 1.953rem;
+      }
+      &:nth-of-type(1) {
+        padding-top: 3rem;
+        padding-bottom: 2rem;
+      }
+      &:nth-of-type(n + 1) {
+        padding-bottom: 2rem;
+      }
+    }
+    button {
+      margin-top: 2rem;
+      width: 310px;
+    }
+    button:after {
+      position: absolute;
+      top: 16.2rem;
+      left: 3.5rem;
+      right: 3.5rem;
+      opacity: 0.25;
+      content: " ";
+      height: 1px;
+      background-color: $black;
+    }
+  }
+
+  &::after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 250px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+  }
+}
+
+.appear {
+  transform: translateX(0);
+  display: block;
+
+  @include media(">=tablet") {
+    display: none;
+  }
+}

@@ -1,0 +1,20 @@
+.menu__tablet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  @include media(">=tablet") {
+    display: flex;
+  }
+  li {
+    padding-right: 4rem;
+    a {
+      color: $black;
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.562rem;
+      letter-spacing: $ls-xs;
+      text-transform: uppercase;
+    }
+  }
+}
